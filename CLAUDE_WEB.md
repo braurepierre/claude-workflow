@@ -60,7 +60,7 @@ Optimisé pour parsing agent : dense, sans prose, structuré.
 - Terminer par 1-2 questions ciblées
 
 ## FIN DE SESSION — DEVLOG
-Générer DEVLOG.md complet mis à jour dans un livrable Claude Code.
+Générer uniquement le bloc de la nouvelle session (diff à ajouter en fin de fichier), pas le fichier entier régénéré.
 Format section :
 ```
 ## Session N — Titre court
@@ -69,7 +69,7 @@ Format section :
 **Bugs résolus :** ...
 **TODO :** ...
 ```
-Règles : sections précédentes intactes / zéro dialogue / fichier entier régénéré
+Règles : sections précédentes intactes / zéro dialogue / diff uniquement
 
 ## NOUVEAU PROJET — SYSTEM PROMPT
 Structure toujours : Partie 1 (ce fichier, quasi-identique) / Partie 2 (specs projet)
