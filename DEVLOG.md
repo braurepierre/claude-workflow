@@ -53,3 +53,15 @@
 - Règle ajoutée dans CLAUDE_WEB.md section "RÈGLE EXPLORATION GITHUB"
 
 **TODO :** aucun.
+
+---
+
+## Session 7 — Correction incident git + règle fetch clarifiée
+
+**Décisions :**
+- Diagnostic incident : commits corrompus sur main et dev de dan-immersive → `git reset --hard` + force push
+- Règle fetch clarifiée : l'utilisateur colle une URL du repo une fois en début de session → Claude fetche librement toutes les URLs dérivées sans redemander
+- Règle ajoutée dans CLAUDE_WEB.md section "RÈGLE EXPLORATION GITHUB"
+- Livrable DEVLOG : diff uniquement (bloc à ajouter), pas le fichier entier régénéré → ajouté dans CLAUDE_WEB.md section "FIN DE SESSION — DEVLOG"
+
+**TODO :** aucun.
