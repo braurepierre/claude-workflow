@@ -1,0 +1,55 @@
+# DEVLOG — claude-workflow
+
+## Session 3 — Consolidation DEVLOG + workflow multi-session
+
+**Décisions :**
+- Remplacement des fichiers `contexte-conversation_*.md` par un unique `DEVLOG.md` consolidé
+- Workflow : DEVLOG.md régénéré en fin de chaque session + livré à Claude Code pour commit/push
+- Instructions projet mises à jour avec section "Fin de session"
+
+**TODO :** aucun.
+
+---
+
+## Session 4 — Séparation Partie 1 / Partie 2 dans CLAUDE_WEB.md
+
+**Décisions :**
+- CLAUDE_WEB.md restructuré en deux parties : Partie 1 (bonnes pratiques génériques) / Partie 2 (specs techniques projet)
+- Incident : instructions Claude Code transmises au mauvais projet → rollback `git reset --hard HEAD~1 --force`
+
+**TODO :** aucun.
+
+---
+
+## Session 5 — Exploration GitHub via API + création CLAUDE_WEB.md
+
+**Décisions :**
+- Exploration GitHub via API publique : Claude génère l'URL, l'utilisateur la colle une fois, Claude fetche librement ensuite
+- `REPO.md` abandonné → remplacé par l'approche API à la demande
+- Création `CLAUDE_WEB.md` : instructions architecte séparées de `CLAUDE.md`
+- Règle : `CLAUDE.md` = Claude Code uniquement
+- Reformatage dense/machine pour lecture agent
+
+**TODO :** aucun.
+
+---
+
+## Session 6 — Extraction workflow générique → repo claude-workflow
+
+**Décisions :**
+- Création du repo `claude-workflow` pour centraliser la Partie 1 générique — réutilisable sur tous les projets futurs
+- Chaque projet ne conserve que la Partie 2 specs dans son `CLAUDE_WEB.md`
+- `CLAUDE.md` générique centralisé ici, chaque projet ajoute ses commandes spécifiques
+
+**TODO :** aucun.
+
+---
+
+## Session 7 — Correction incident + règle fetch clarifiée
+
+**Décisions :**
+- Incident session 6 : Claude Code avait pushé les fichiers claude-workflow sur main de dan-immersive → corrigé via `git reset --hard HEAD~1` + force push sur dev et main
+- Règle fetch clarifiée : l'utilisateur colle une URL du repo une fois en début de session → Claude fetche librement toutes les URLs dérivées sans redemander
+- Règle ajoutée dans CLAUDE_WEB.md section "RÈGLE EXPLORATION GITHUB"
+
+**TODO :** aucun.
