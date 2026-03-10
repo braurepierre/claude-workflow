@@ -65,3 +65,23 @@
 - Livrable DEVLOG : diff uniquement (bloc à ajouter), pas le fichier entier régénéré → ajouté dans CLAUDE_WEB.md section "FIN DE SESSION — DEVLOG"
 
 **TODO :** aucun.
+
+---
+
+## Session 9 — Format livrable XML + versioning PART1
+
+**Décisions :**
+- PART1_VERSION ajouté en tête de CLAUDE_WEB.md (semver, ex: 1.0) — permet de vérifier la sync entre référence claude-workflow et instructions projet sur claude.ai
+- Format livrable Claude Code migré vers balises XML : <file path="..." action="replace|modify|create|delete"> — élimine les conflits de délimiteurs markdown pour tout type de fichier (.md, .html, .js, etc.)
+- Règles GitHub clarifiées : Claude ne peut pas accéder seul à un repo — URL fournie par l'utilisateur via widget Q&R (minimum 2 options pour affichage)
+- Workflow session mis à jour : confirmation sync git + annonce PART1_VERSION en SETUP
+- Avant livrable : Claude demande confirmation repo + branche active en local
+- Comportement face aux questionnements : Claude étudie et justifie avant de valider ou maintenir sa position
+- Branche dev créée sur claude-workflow
+- CLAUDE.md mis à jour avec le nouveau format XML
+
+**Paramètres modifiés :** CLAUDE_WEB.md, CLAUDE.md
+
+**Bugs résolus :** Widget Q&R avec une seule option ne s'affiche pas — ajouter option "Annuler" comme fallback
+
+**TODO :** aucun.
