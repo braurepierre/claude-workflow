@@ -85,3 +85,22 @@
 **Bugs résolus :** Widget Q&R avec une seule option ne s'affiche pas — ajouter option "Annuler" comme fallback
 
 **TODO :** aucun.
+
+---
+
+## Session 10 — Restructuration CLAUDE_WEB.md + glossaire entités
+
+**Décisions :**
+- CLAUDE_WEB.md restructuré en 6 sections avec sous-sections — logique : contexte → rôle → comportements → règles → workflow → format livrable
+- Ajout section 1. CONTEXTE : glossaire 11 entités métier + flux de mise à jour
+- Ajout section 3. COMPORTEMENTS & EXPRESSIONS : communication, compréhension du besoin, rigueur analytique, interactions GitHub
+- GITHUB_USERNAME remplace URL_REFERENCE — Claude construit les URLs à partir du username
+- Suppression des endpoints utiles — surcharge de contexte inutile
+- Workflow session enrichi : étape 5.2 DÉFINITION DU BESOIN ajoutée — la génération du livrable est la dernière étape
+- PART1_VERSION passée à 1.1
+
+**Paramètres modifiés :** CLAUDE_WEB.md
+
+**Bugs résolus :** aucun
+
+**TODO :** aucun
