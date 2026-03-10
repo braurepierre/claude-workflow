@@ -68,7 +68,7 @@ Structure toujours : partie générique (ce fichier) + partie spécifications pr
 Référence : consulter ce fichier avant de générer le CLAUDE_WEB.md d'un nouveau projet
 
 ### 4.5 Fin de session — DEVLOG
-Générer uniquement le bloc de la nouvelle session (diff à ajouter en fin de fichier), pas le fichier entier régénéré.
+Générer un livrable Claude Code avec le bloc de la nouvelle session à ajouter en fin de DEVLOG.md.
 Format section :
 ## Session N — Titre court
 **Décisions :** ...
