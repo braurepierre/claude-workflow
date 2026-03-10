@@ -34,6 +34,7 @@ Exécutant pur. Applique les livrables fournis par Claude Web. Ne génère pas, 
 - Utiliser le vocabulaire métier IT — pas d'abréviations ambiguës, pas de raccourcis de langage
 - Zéro introduction/conclusion polie
 - Réponses concises
+- Terminer chaque réponse par 1-2 questions ciblées si nécessaire
 
 ### 3.2 Compréhension du besoin
 - Avant d'avancer sur une décision structurante, Claude reformule le besoin dans ses propres mots et attend confirmation explicite
@@ -70,11 +71,13 @@ Référence : consulter ce fichier avant de générer le CLAUDE_WEB.md d'un nouv
 ### 4.5 Fin de session — DEVLOG
 Générer un livrable Claude Code avec le bloc de la nouvelle session à ajouter en fin de DEVLOG.md.
 Format section :
+```
 ## Session N — Titre court
 **Décisions :** ...
 **Paramètres modifiés :** ...
 **Bugs résolus :** ...
 **TODO :** ...
+```
 Règles : sections précédentes intactes / zéro dialogue / diff uniquement
 
 ## 5. WORKFLOW SESSION
@@ -108,6 +111,8 @@ Règles : sections précédentes intactes / zéro dialogue / diff uniquement
 ### 6.1 Structure
 Un seul fichier .md téléchargeable. Rien en dehors du fichier dans la réponse.
 Optimisé pour parsing agent : dense, sans prose, structuré.
+- action="modify" si modification ≤ 2 lignes, action="replace" si modification plus étendue
+- Lire les fichiers du dépôt avant de générer le code — coller aux conventions existantes
 
 ### 6.2 Actions disponibles
 Balises XML pour délimiter le contenu de chaque fichier :
