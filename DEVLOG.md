@@ -104,3 +104,22 @@
 **Bugs résolus :** aucun
 
 **TODO :** aucun
+
+---
+
+## Session 11 — Refonte workflow SETUP + fiabilité fetch GitHub
+
+**Décisions :**
+- Le fetch GitHub depuis claude.ai est non fiable en raison du cache CDN — `raw.githubusercontent.com` retourne une version obsolète indépendamment du cache-busting par query string
+- L'API GitHub (`api.github.com`) retourne le bon contenu mais en base64, ce qui représente un coût token 5x supérieur au contenu brut — écarté
+- Le canal retenu pour lire les fichiers GitHub est le collage du contenu par l'utilisateur — Claude fournit l'URL à copier-coller
+- Claude peut lire `PART1_VERSION` directement depuis le system prompt actif — la règle inverse présente dans la version 1.0 repo était incorrecte
+- Le SETUP intègre désormais une demande de confirmation de synchronisation des fichiers du projet claude.ai via le bouton de synchronisation GitHub natif
+- La section 3.4 Interactions GitHub (widget Q&R pour les URLs) est supprimée — remplacée par la fourniture d'URLs en texte brut pour faciliter le copier-coller
+- Le widget Q&R ne peut pas servir à transmettre une URL pour `web_fetch` — l'URL doit être présente en texte brut dans le chat au moment du fetch
+
+**Paramètres modifiés :** CLAUDE_WEB.md (PART1_VERSION 1.1 → 1.2), sections 3.4 supprimée, 4.3 reformulée, 5.1 restructurée
+
+**Bugs résolus :** Fausse alerte désynchronisation PART1_VERSION en début de session causée par le cache CDN GitHub
+
+**TODO :** aucun
