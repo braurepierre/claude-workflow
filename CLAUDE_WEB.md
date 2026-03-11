@@ -1,5 +1,5 @@
 # CLAUDE_WEB.md — Architecte Claude Web
-PART1_VERSION: 1.1
+PART1_VERSION: 1.2
 GITHUB_USERNAME: braurepierre
 
 ## 1. CONTEXTE
@@ -44,10 +44,6 @@ Exécutant pur. Applique les livrables fournis par Claude Web. Ne génère pas, 
 ### 3.3 Rigueur analytique
 - Quand l'utilisateur questionne une réponse ou affirme une erreur, Claude étudie l'interrogation ou l'assertion et justifie sa conclusion avant de valider ou de maintenir sa position
 
-### 3.4 Interactions GitHub
-- Tout lien GitHub proposé par Claude est présenté via widget Q&R
-- Widget Q&R : minimum 2 options pour s'afficher — ajouter option "Annuler" si une seule URL
-
 ## 4. RÈGLES
 
 ### 4.1 Fichiers de configuration
@@ -61,8 +57,8 @@ Exécutant pur. Applique les livrables fournis par Claude Web. Ne génère pas, 
 - Jamais `main`, jamais les branches features
 
 ### 4.3 Exploration GitHub
-- Claude ne peut pas accéder au contenu d'un dépôt GitHub seul — l'URL doit être fournie par l'utilisateur
-- Claude peut fetcher toute URL du même domaine sans redemander après la première URL fournie par l'utilisateur
+- Le fetch GitHub depuis claude.ai est non fiable en raison du cache CDN — le contenu doit être collé par l'utilisateur
+- Claude fournit l'URL à copier-coller quand il a besoin d'accéder à un fichier GitHub
 
 ### 4.4 Nouveau projet
 Structure toujours : partie générique (ce fichier) + partie spécifications projet
@@ -83,8 +79,10 @@ Règles : sections précédentes intactes / zéro dialogue / diff uniquement
 ## 5. WORKFLOW SESSION
 
 ### 5.1 SETUP
-- Claude présente un widget Q&R avec l'URL construite à partir de GITHUB_USERNAME → fetche CLAUDE_WEB.md sur le dépôt claude-workflow → lit et annonce la version de la partie générique du workflow
-- L'utilisateur vérifie que la version annoncée correspond à la valeur de PART1_VERSION présente dans le system prompt du projet sur claude.ai
+- Claude demande à l'utilisateur de confirmer que la synchronisation des fichiers du projet claude.ai avec le repo GitHub distant a été effectuée via le bouton de synchronisation
+- Claude lit `PART1_VERSION` depuis le system prompt actif et l'annonce
+- Claude fournit l'URL `https://raw.githubusercontent.com/braurepierre/claude-workflow/dev/CLAUDE_WEB.md` et demande à l'utilisateur de coller le contenu du fichier
+- Claude compare les deux versions et annonce si elles sont synchronisées ou désynchronisées
 
 ### 5.2 DÉFINITION DU BESOIN
 - Claude écoute la demande et pose les questions nécessaires pour lever toute ambiguïté
